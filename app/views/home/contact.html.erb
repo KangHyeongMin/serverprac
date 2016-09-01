@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
     <div class="row">
         <br>
@@ -10,6 +13,7 @@
             <br>
             <h4>홍보실</h4>
             <hr align="left" style="width: 80%; color: black; background-color: black; height: 2px;">
+            숫자로 보는 보나<br>
             보도자료<br>
             기타등등<br>
         </div>
@@ -18,21 +22,50 @@
         <div class="col-md-10 col-xs-10">
             <br>
             <br>
-            <p style="font-weight: 100;"><font size="7">이 페이지는 지금 <b style="font-weight: 400;">공사 중</b></font></p>
+            <p style="font-weight: 100;"><font size="7"><b style="font-weight: 400;">숫자</b>로 보는 보나</font></p>
             
             <hr align="left" style="width: 80%; color: black; background-color: black; height: 2px;">
 
             <br>
-            <br>
-            <h4>눈에 보이는 변화가 없어도</h4>
             <font color="grey" style="font-weight: 100;">
-            개발자는 항상 일하고 있습니다.<br>
+            (보나 캠페인 3기부터 현재까지) <br>
             </font>  
+            <h3>현재 누적 성공률 <font size="6"><span class="Count">87</span></font>%</h3>
+            <h3>현재까지 <font size="6"><span class="Count">173</span></font>명 참여</h3>
+
+            <br>
             
-            
+            <!--<h4>3기 64/75 (18/25) </h4>-->
+            <!--<h4>4기 73/81 (21/27) </h4>-->
+            <!--<h4>5기 76/93 (21/31)  </h4>-->
+            <!--<h4>6기 148/164 (40/55) </h4>-->
+            <!--<h4>7기 35명참여 (현재 집계 중) </h4>-->
+            <font color="grey" size="4" style="font-weight: 100;">
+            3기 64/75 (18/25) <br>
+            4기 73/81 (21/27) <br>
+            5기 76/93 (21/31) <br>
+            6기 148/164 (40/55) <br>
+            7기 35명참여 (현재 집계 중) <br>
+            </font> 
 
         </div>
         
     </div>
 
 </div>
+
+
+
+<script type="text/javascript">
+    $('.Count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+</script>
