@@ -34,42 +34,65 @@
             <div class="col-md-4">
                 <div>
                     <div>
-                        <h4>보나 회사소개</h4>
+                        <h4><a href="about.html" style="color:black;">보나 회사소개</a></h4>
                     </div>
                     <div>
-                        <img src="/assets/wide_sample_img.png" style="width: 100%;">
-                        <p>여러분들의 다짐이 한순간의 결심으로만 끝나지 않도록<br>
-                        여러분들에게 성취의 경험을 드리는 보나입니다.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <div>
-                        <h4>보나 캠페인</h4>
-                    </div>
-                    <div>
-                        <img src="/assets/wide_sample_img.png" style="width: 100%;">
-                        <p>"내일 헬스장가야지" 보다는 "지금 당장 플랭크 30초"를 하자.<br>
-                        여러분의 건강을 위한 보나입니다.</p>
+                        <a href="about.html" style="color:black;">
+                            <img src="/assets/wide_sample_img.png" style="width: 100%;">
+                            <p>여러분들의 다짐이 한순간의 결심으로만 끝나지 않도록<br>
+                            여러분들에게 성취의 경험을 드리는 보나입니다.</p>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
                     <div>
-                        <h4>야한란</h4>
+                        <h4><a href="services.html" style="color:black;">보나 캠페인</a></h4>
                     </div>
                     <div>
-                        <img src="/assets/wide_sample_img.png" style="width: 100%;">
-                        <p>건강하지 않은 야식 외엔 선택지가 없다는 점은 너무나도 아쉽습니다. 
-                        보나는 야한란을 시작으로 건강한 야식을 제공하려합니다. </p>
+                        <a href="services.html" style="color:black;">
+                            <img src="/assets/wide_sample_img.png" style="width: 100%;">
+                            <p>"내일 헬스장가야지" 보다는 "지금 당장 플랭크 30초"를 하자.<br>
+                            여러분의 건강을 위한 보나입니다.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <div>
+                        <h4><a href="services-bonaappetit.html" style="color:black;">Bona appétit</a></h4>
+                    </div>
+                    <div>
+                        <a href="services-bonaappetit.html" style="color:black;">
+                            <img src="/assets/wide_sample_img.png" style="width: 100%;">
+                            <p>건강하지 않은 야식 외엔 선택지가 없다는 점은 너무나도 아쉽습니다. 
+                            보나는 야한란을 시작으로 건강한 야식을 제공하려합니다. </p>
+                        </a>
                     </div>
                 </div>
         </div>
         <!-- /.row -->
-
-
+        
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-12" style="text-align: center;">
+                <hr>
+                <br>
+                <p style="font-weight: 100;"><font size="7"><b style="font-weight: 400;">숫자</b>로 보는 보나</font></p>
+                <br>
+                <font color="grey" style="font-weight: 100;">
+                (보나 캠페인 3기부터 현재까지) <br>
+                </font>  
+                <h3>현재 누적 성공률 <font size="6"><span class="Count">87</span></font>%</h3>
+                <h3>현재까지 <font size="6"><span class="Count">173</span></font>명 참여</h3>
+    
+                <br>
+            <div>
+        </div>
 
 </div>
 
@@ -80,3 +103,17 @@ $('.carousel').carousel({
 })
 </script>
 
+<!--숫자 애니메이션을 위한 자바스크립트-->
+<script type="text/javascript">
+    $('.Count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+</script>
