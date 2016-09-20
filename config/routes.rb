@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'about' => 'home#about'
   get 'home/about'
   
+  get 'about-location' => 'home#about-location'
+  get 'home/about-location'
+  
   get 'services' => 'home#services'
   get 'home/services'
   

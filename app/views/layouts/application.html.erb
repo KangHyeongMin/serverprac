@@ -7,6 +7,54 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
+  <!--구글 맵 API-->
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script>
+		function initialize() {
+
+			var Y_point			= 35.574901;		// Y 좌표
+			var X_point			= 129.188549;		// X 좌표
+
+			var zoomLevel		= 14;						// 지도의 확대레벨, 숫자가 클 수록 확대
+
+			var markerTitle		= "bona";				// 현재위치 마커에 마우스를 올렸을 때 나오는 정보
+			var markerMaxWidth	= 300;						// 마커를 클릭 했을 때 말풍선의 최대 크기
+
+			// 클릭시 말풍선 내용
+			var contentString	= '<div>' +
+			'<h2>bona</h2>'+
+			'<p>유니스트 경영관 506-3</p>' +
+			'</div>';
+
+			var myLatlng = new google.maps.LatLng(Y_point, X_point);
+			var mapOptions = {
+								zoom: zoomLevel,
+								center: myLatlng,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+			var marker = new google.maps.Marker({
+													position: myLatlng,
+													map: map,
+													title: markerTitle
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+														{
+															content: contentString,
+															maxWidth: markerMaxWidth
+														}
+			);
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+	</script>
+  
+  
+  
   <!--구글 아날리틱스-->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,7 +67,7 @@
   </script>
 
 </head>
-<body>
+<body onload="initialize()">
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: white; border-top-width: 3px;border-bottom-width: 3px;height: 110px;">
       <div class="container">
